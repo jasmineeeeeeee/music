@@ -15,7 +15,7 @@
     </div>
     <div class="bg-layer" ref="layer"></div>
     <scroll :data="songs" @scroll="scroll"
-            :listen-scroll="listenScroll" :probe-type="probeType" class="list" ref="list">
+             :probe-type="probeType" class="list" ref="list">
       <div class="song-list-wrapper">
         <songlist :songs="songs" :rank="rank" @select="selectItem"></songlist>
       </div>
@@ -221,8 +221,9 @@
       bottom: 0
       width: 100%
       background: $color-background
+      overflow hidden
       .song-list-wrapper
-        padding: 20px 30px
+        padding: 10px 20px
       .loading-container
         position: absolute
         width: 100%

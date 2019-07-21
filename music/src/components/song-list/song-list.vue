@@ -1,6 +1,6 @@
 <template>
   <div class="song-list">
-    <ul>
+    <ul style="margin: 0;padding: 0">
       <li @click="selectItem(song, index)" class="item" v-for="(song, index) in songs">
         <div class="rank" v-show="rank">
           <span :class="getRankCls(index)" v-text="getRankText(index)"></span>
@@ -60,6 +60,7 @@
       box-sizing: border-box
       height: 64px
       font-size: $font-size-medium
+      margin-left 20px
       .rank
         flex: 0 0 25px
         width: 25px
@@ -86,6 +87,7 @@
         .name
           no-wrap()
           color: $color-text
+          font-size:$font-size-medium-x
         .desc
           no-wrap()
           margin-top: 4px

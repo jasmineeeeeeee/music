@@ -26,7 +26,7 @@
       width: 86px
       height: 90px
       margin: 0 auto
-      bg-image('no-result')
+      background url(./no-result@2px.png)
       background-size: 86px 90px
     .no-result-text
       margin-top: 30px

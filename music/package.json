@@ -13,6 +13,9 @@
   "dependencies": {
     "axios": "^0.16.2",
     "better-scroll": "^1.15.2",
+    "create-keyframe-animation": "^0.1.0",
+    "js-base64": "^2.1.9",
+    "lyric-parser": "^1.0.1",
     "good-storage": "^1.1.0",
     "jsonp": "^0.2.1",
     "stylus": "^0.54.5",

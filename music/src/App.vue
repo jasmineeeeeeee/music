@@ -5,14 +5,14 @@
       <keep-alive>
         <router-view></router-view>
       </keep-alive>
-      <!--<player></player>-->
+      <play></play>
     </div>
 </template>
 
 <script type="text/ecmascript-6">
   import header from './components/header/header.vue'
   import tab from './components/tab.vue'
-  import player from './components/Player.vue'
+  import play from './components/play.vue'
 
 
   export default {
@@ -21,7 +21,7 @@
     },
     components: {
       'v-header':header,
-      tab,player
+      tab,play
     }
   }
 </script>

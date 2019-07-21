@@ -6,45 +6,44 @@
 
 <script type="text/ecmascript-6">
   import MusicList from './music-list'
-  import {getSingerDetail} from '../assets/js/recommond'
+  import {getSingerDetail} from '../assets/js/singer'
   import {ERR_OK} from '../assets/js/config'
-  import {createSong} from '../assets/js/recommond'
+  import {createSong} from '../assets/js/song'
   import {mapGetters} from 'vuex'
 
   export default {
-    props:{
-      id:{
-        type:Number
-      }
-   },
-    data(){
-      return{
-        singerId:0,
-        singer:[],
-        songs:0
+    computed: {
+      title() {
+        return this.singer.name
+      },
+      bgImage() {
+        return this.singer.avatar
+      },
+      ...mapGetters([
+        'singer'
+      ])
+    },
+    data() {
+      return {
+        songs: []
       }
     },
-    created(){
-      this.getId();
-    },
-    mounted(){
-        this.getDetail();
+    created() {
+      this._getDetail()
     },
     methods: {
-      getId(){
-        this.singerId=this.id;
-      },
-      getDetail(){
-        getSingerDetail(singerId).then((res) => {
+      _getDetail() {
+        if (!this.singer.id) {
+          this.$router.push('/singer')
+          return
+        }
+        getSingerDetail(this.singer.id).then((res) => {
           if (res.code === ERR_OK) {
-            //this.songs = this._normalizeSongs(res.data.list)
-            console.log("fongle")
+            this.songs = this._normalizeSongs(res.data.list)
           }
-        }).catch((err)=>{
-          console.log('error!')
         })
-      }
-      /*_normalizeSongs(list) {
+      },
+      _normalizeSongs(list) {
         let ret = []
         list.forEach((item) => {
           let {musicData} = item
@@ -53,14 +52,6 @@
           }
         })
         return ret
-      }*/
-    },
-    computed: {
-      title() {
-        return this.singer.name
-      },
-      bgImage() {
-        return this.singer.avatar
       }
     },
     components: {

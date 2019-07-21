@@ -41,7 +41,7 @@ apiRoutes.get('/getDiscList', function (req, res) {
 })
 
 apiRoutes.get('/lyric', function (req, res) {
-  var url = 'https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg?-=getUCGI15639259157244'
+  var url = 'https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg'
 
   axios.get(url, {
     headers: {
@@ -61,23 +61,6 @@ apiRoutes.get('/lyric', function (req, res) {
     res.json(response.data)
   }).catch((e) => {
     console.log(e)
-  })
-})
-
-app.get('/getSingerlist', function (req, res) {
-  var url = 'https://u.y.qq.com/cgi-bin/musicu.fcg?-=getUCGI15639259157244'
-
-  axios.get(url, {
-    response.setHeader("access-control-allow-origin", "*")
-    headers: {
-      referer: 'https://u.y.qq.com/',
-      host: 'u.y.qq.com'
-    },
-    params: req.query
-  }).then((response) => {
-    res.json(response.data)
-  }).catch((e) => {
-    console.log('the error is:'+e)
   })
 })
 

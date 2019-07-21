@@ -18,7 +18,7 @@
             <h1 class="title">
               <span class="text">搜索历史</span>
               <span @click="showConfirm" class="clear">
-                <i class="icon-clear"></i>
+                <i class="icon-clear">#</i>
               </span>
             </h1>
             <search-list @delete="deleteSearchHistory" @select="addQuery" :searches="searchHistory"></search-list>
@@ -126,6 +126,7 @@
             margin-bottom: 20px
             font-size: $font-size-medium
             color: $color-text-l
+            padding-top 15px
           .item
             display: inline-block
             padding: 5px 10px

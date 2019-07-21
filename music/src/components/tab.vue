@@ -30,7 +30,7 @@
     line-height: 44px
     font-size 14px
     font-weight 600
-    background-color brown
+    background-color #6e8b3d
     z-index 1000
     .tab-item
       flex: 1;

@@ -13,7 +13,7 @@
       </div>
       <div class="recommend-list">
         <h1 class="list-title">热门歌单推荐</h1>
-        <ul>
+        <ul style="padding: 0 20px">
           <li @click="selectItem(item)" v-for="item in discList" class="item">
             <div class="icon">
               <img width="60" height="60" :src="item.imgurl">

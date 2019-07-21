@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import axios from'axios'
+import "./assets/stylus/index.styl"
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 /* eslint-disable no-new */
